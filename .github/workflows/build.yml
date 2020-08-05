@@ -20,7 +20,7 @@ jobs:
     - run: cd dist
     - run: tar cvzf app.tar.gz *
     
-    -uses: actions/upload-artifact@v2
-     with:
-      name: app-0.1.0.tar.gz
-      path: app.tar.gz
+    - uses: actions/upload-artifact@v2
+      with:
+        name: app-0.1.0.tar.gz
+        path: app.tar.gz
