@@ -20,7 +20,10 @@ jobs:
     - run: cd dist
     - run: tar cvzf app.tar.gz *
     
+    - name: Get current package version
+      uses: martinbeentjes/npm-get-version-action@master
+    
     - uses: actions/upload-artifact@v2
       with:
-        name: app-0.1.0.tar.gz
+        name: app-${{ steps.package-version.outputs.current-version}}.tar.gz
         path: app.tar.gz
